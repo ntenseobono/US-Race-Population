@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Population</title>
+    <link rel="stylesheet" href = "static/style.css">
+</head>
+<body>
+    <section class = "header">
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="why">OUR WHY</a></li>
+                    <li><a href="trynow?reset=true">TRY NOW</a></li>
+                </ul>
+            </div>
+        </nav>
+    <div class="text-box result">
+        <h1>Result</h1>
+        {% if state == 'None' or state == '' %}
+            <p>Year: <u>{{year}}</u> <br>Race: <u>{{race}}</u></p><br>
+            {% if race == 'total' %}
+                <p> In <u>{{year}}</u>, the US total population was <u>{{number}}</u></p>
+            {% else %}
+                <p> In <u>{{year}}</u>, the US total population for <u>{{race}}</u> people was <u>{{number}}</u></p>
+            {% endif %}
+        {% else %}
+            <p>Year: <u>{{year}}</u> <br> Race: <u>{{race}}</u><br> State: <u>{{state}}</u></p><br>
+            {% if race == 'total' %}
+                <p> In <u>{{year}}</u>, <u>{{state}}'s</u> total population was <u>{{number}}</u></p>
+            {% else %}
+                <p> In <u>{{year}}</u>, <u>{{state}}'s</u> total population for <u>{{race}}</u> people was <u>{{number}}</u></p>
+            {% endif %}
+        {% endif %}
+        <br><p>What do you want to do next</p>
+        <a href="home" class="hero-btn custom">Return Home</a>
+        <a href="trynow?reset=true" class="hero-btn custom">Start Again</a>
+
+    </div>
+    
+</body>
+</html> 

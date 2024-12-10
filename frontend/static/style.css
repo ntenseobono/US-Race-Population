@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ .header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.9), rgba(4,9,30,0.8)), url(banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+h1{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 48px;
+}
+h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+nav{
+    display: flex;
+    padding: 1% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 200px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative; 
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height:2px;
+    background-color: rgb(43, 113, 175);
+    display: block;
+    margin: auto;
+
+}
+.nav-links ul li:hover::after{
+    transition: 0.5s;
+    width: 100%;
+}
+
+.hero-btn {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border: solid 1px white;
+    padding: 12px 34px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.hero-btn.custom{
+    width: 100px;
+    margin-top: 0px;
+}
+
+.hero-btn:hover{
+    border:1px solid rgb(43, 113, 175);
+    background: rgb(43, 113, 175);
+    transition: 0.6 s;
+}
+div.our-why{
+    color: white;
+    padding-top: 2%;
+    width: 80%;
+    padding-left: 10%;
+    padding-bottom: 10%;
+}
+.our-why h1{
+    font-size: 42px;
+    padding-top: 10px;
+}
+.our-why-text {
+    text-align: left;
+    color: white;
+    line-height: 1.7;
+}
+.our-why p {
+    font-size: 1.2em;
+}
+.text-box{
+    width: 90%;
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-left: 5%;
+}
+.text-box.result{
+    padding-top: 0%;
+}
+.text-box h1{
+    font-size: 62px;
+}
+.text-box p{
+    margin: 10px 0;
+    font-size: 1.4em;
+    color: white;
+}
+input[type="submit"] {
+    display: incline-block;
+    text-decoration: none;
+    color: white;
+    border:solid 1px white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+  
+input[type="submit"]:hover {
+    border:1px solid rgb(43, 113, 175);
+    background: rgb(43, 113, 175);
+    transition: 0.6 s;
+}
+
+
+u {
+    color: lightblue;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a{
+    color: lightblue;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.column {
+    border: 2px solid whitesmoke;
+    border-radius: 8px;
+    float: left;
+    width: 30%;
+    margin: 5px;
+    padding: 8px;
+}
+  
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+#ranking td, #ranking th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 1.2em;
+}
+  
+#ranking tr:nth-child(even){
+    background-color: rgba(4,9,30,0.9);
+}
+  
+#ranking tr:hover {
+    background-color: rgb(72, 155, 228);
+}
+  
+#ranking th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(43, 113, 175);
+    color: white;
+}
+
+select, input[type="number"] {
+    padding: 5px;
+    margin-bottom: 20px;
+}

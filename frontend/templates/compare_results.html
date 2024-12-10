@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Population</title>
+    <link rel="stylesheet" href = "static/style.css">
+</head>
+<body>
+    <section class = "header">
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="why">OUR WHY</a></li>
+                    <li><a href="trynow?reset=true">TRY NOW</a></li>
+                </ul>
+            </div>
+        </nav>
+    <div class="text-box result">
+        <h1>Result</h1>
+        {% if year == 0 %}
+            <p>Race: <u>{{race}}</u><br><u>{{firstState}}'s 2010</u> Population: <u>{{firstStatePopulation}}</u><br><u>{{secondState}}'s 2020</u> Population: <u>{{secondStatePopulation}}</u></p><br>
+            {%if check_number == 'negative' %}
+                {%if firstState == secondState%}
+                    <p>The <u>{{race}}</u> population of <u>{{secondState}}</u> grew between 2010 and 2020 by <u>{{number}}</u> </p>
+                {%else%}
+                    <p>In 2020, <u>{{secondState}}</u> had a greater <u>{{race}}</u> population than <u>{{firstState}}</u> in 2010 by <u>{{number}}</u></p>
+                {% endif %}
+            {% else %}
+                {%if firstState == secondState%}
+                    <p>The <u>{{race}}</u> population of <u>{{secondState}}</u> shrunk between 2010 and 2020 by <u>{{number}}</u> </p>
+                {%else%}
+                    <p>In 2010, <u>{{firstState}}</u> had a greater <u>{{race}}</u> population than <u>{{secondState}}</u> in 2020 by <u>{{number}}</u></p>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <p>Year: <u>{{year}}</u><br><u>{{firstState}}'s {{year}}</u> Population: <u>{{firstStatePopulation}}</u><br><u>{{secondState}}'s {{year}}</u> Population: <u>{{secondStatePopulation}}</u></p><br>
+            {%if check_number == 'negative' %}
+                {%if firstState == secondState%}
+                    <p>There is no difference because you selected the same state!</p>
+                {%else%}
+                    <p><u>{{secondState}}</u> had a greater <u>{{race}}</u> population than <u>{{firstState}}</u> in <u>{{year}}</u> by <u>{{number}}</u> </p>
+                {% endif %}
+            {% else %}
+                {%if firstState == secondState%}
+                    <p>There is no difference because you selected the same state!</p>
+                {%else%}
+                    <p><u>{{firstState}}</u> had a greater <u>{{race}}</u> population than <u>{{secondState}}</u> in <u>{{year}}</u> by <u>{{number}}</u> </p>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        <br><p>What do you want to do next</p>
+        <a href="home" class="hero-btn custom">Return Home</a>
+        <a href="trynow?reset=true" class="hero-btn custom">Start Again</a>
+
+    </div>
+    
+</body>
+</html> 

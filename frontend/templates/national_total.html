@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Population</title>
+    <link rel="stylesheet" href = "static/style.css">
+    <script src="static/data.js"></script>
+
+</head>
+<body>
+    <section class = "header">
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="why">OUR WHY</a></li>
+                    <li><a href="trynow?reset=true">TRY NOW</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        
+        <div class="our-why">
+            <h1>
+                Race or Total population of the US
+            </h1>
+            <h2>Retrieve the population size of a particular race within the US.</h2>
+            <div class="our-why-text">
+                <form action="{{ url_for('results') }}" method="get">
+                    <P><label for="year">Select a Year</label></P>
+                    <select name="year" id="year">
+                        <option value="2010">2010</option>
+                        <option value="2020">2020</option>
+                    </select>
+                    <p><u>PS: race combinations in this data represents the number of races that a person is composed of i.e if someone has both white and black ancestry, their race combination is 2</u></p>
+                    <p><label for="raceCombination">Select your number of race combinations</label></p>
+                    <select name="raceCombination" id="raceCombination" onchange="showDropdown()">
+                        <option value="Total">All</option>
+                        <option value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="three">3</option>
+                    </select>
+
+                    <div id = "firstDropdown" style="display: none;">
+                        <P><label for="firstDropdown">Select a Race</label></P>
+                        <select name="select_race_one" id="select_race_one">
+                            <option value="Asian">Asian</option>
+                            <option value="American Indian">American Indian</option>
+                            <option value="Black">Black or African American</option>
+                            <option value="Native Hawaiian">Native Hawaiian</option>
+                            <option value="White">White</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div id = "secondDropdown" style="display: none;">
+                        <P><label for="secondDropdown">Select a Race</label></P>
+                        <select name="select_race_two" id="Select_race_two">
+                            <option value="White; Black">White; Black</option>
+                            <option value="White; American Indian">White; American Indian</option>
+                            <option value="White; Asian">White; Asian</option>
+                            <option value="White; Native Hawaiian">White; Native Hawaiian</option>
+                            <option value="White; Other">White; Other</option>
+                            <option value="Black; American Indian">Black; American Indian</option>
+                            <option value="Black; Asian">Black; Asian</option>
+                            <option value="Black; Native Hawaiian">Black; Native Hawaiian</option>
+                            <option value="Black; Other">Black; Other</option>
+                            <option value="American Indian; Asian">American Indian; Asian</option>
+                            <option value="American Indian; Native Hawaiian">American Indian; Native Hawaiian</option>
+                            <option value="American Indian; Other">American Indian; Other</option>
+                            <option value="Asian; Native Hawaiian">Asian; Native Hawaiian</option>
+                            <option value="Asian; Other">Asian; Other</option>
+                            <option value="Native Hawaiian; Other">Native Hawaiian; Other</option>
+                        </select>
+                    </div>
+        
+                    <div id="thirdDropdown" style="display: none;">
+                        <P><label for="thirdDropdown">Select a Race</label></P>
+                        <select name="select_race_three" id="select_race_three">
+                            <option value="White; Black; American Indian">White; Black; American Indian</option>
+                            <option value="White; Black; Asian">White; Black; Asian</option>
+                            <option value="White; Black; Native Hawaiian">White; Black; Native Hawaiian</option>
+                            <option value="White; Black; Other">White; Black; Other</option>
+                            <option value="White; American Indian; Asian">White; American Indian; Asian</option>
+                            <option value="White; American Indian; Native Hawaiian">White; American Indian; Native Hawaiian</option>
+                            <option value="White; American Indian; Other">White; American Indian; Other</option>
+                            <option value="White; Asian; Native Hawaiian">White; Asian; Native Hawaiian</option>
+                            <option value="White; Asian; Other">White; Asian; Other</option>
+                            <option value="White; Native Hawaiian; Other">White; Native Hawaiian; Other</option>
+                            <option value="Black; American Indian; Asian">Black; American Indian; Asian</option>
+                            <option value="Black; American Indian; Native Hawaiian">Black; American Indian; Native Hawaiian</option>
+                            <option value="Black; American Indian; Other">Black; American Indian; Other</option>
+                            <option value="Black; Asian; Native Hawaiian">Black; Asian; Native Hawaiian</option>
+                            <option value="Black; Asian; Other">Black; Asian; Other</option>
+                            <option value="Black; Native Hawaiian; Other">Black; Native Hawaiian; Other</option>
+                            <option value="American Indian; Asian; Native Hawaiian">American Indian; Asian; Native Hawaiian</option>
+                            <option value="American Indian; Asian; Other">American Indian; Asian; Other</option>
+                            <option value="American Indian; Native Hawaiian; Other">American Indian; Native Hawaiian; Other</option>
+                            <option value="Asian; Native Hawaiian; Other">Asian; Native Hawaiian; Other</option>
+                        </select>
+                    </div><br><br>
+                    
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+</body>
+</html> 

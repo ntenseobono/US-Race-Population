@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Population</title>
+    <link rel="stylesheet" href = "static/style.css">
+</head>
+<body>
+    <section class = "header">
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="why">OUR WHY</a></li>
+                    <li><a href="trynow?reset=true">TRY NOW</a></li>
+                </ul>
+            </div>
+        </nav>
+    <h1>Result</h1>
+    <div class="text-box result">
+        <table id="ranking">
+            <tr>
+                {% if filter == "filterStates" %}
+                    <th>US States</th>
+                    <th>{{race}} Population</th>
+                {% else %}
+                    <th>Races</th>
+                    <th>Population in {{state}}</th>
+                {% endif %}
+            </tr>
+            {% for item in filtered_data %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{ item[1] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <br><br><p>What do you want to do next</p>
+        <a href="home" class="hero-btn custom">Return Home</a>
+        <a href="trynow?reset=true" class="hero-btn custom">Start Again</a>
+
+    </div>
+    
+</body>
+</html> 
